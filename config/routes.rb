@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   resources :movies do
     member do
-      get :following, :unfollowing
+      get :following, :add, :remove
     end
   end
   resources :actors

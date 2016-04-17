@@ -6,4 +6,5 @@ class ExploreController < ApplicationController
     @actors = Actor.all
   end
   
+  
 end

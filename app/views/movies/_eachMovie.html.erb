@@ -1,7 +1,7 @@
 <div class="row">
   <% if current_user.follows?(@movie) %>
     <div class="col-md-2" style="margin-bottom: 30px">
-        <%= link_to "Remove", unfollowing_movie_path(@movie) %>
+        <%= link_to "Remove", remove_movie_path(@movie) %>
         <%= image_tag @movie.image %>
         <h3><%= @movie.title %></h3>
         <p><%= @movie.release_year %></p>
@@ -9,7 +9,7 @@
     </div>
   <% else %>
     <div class="col-md-2" style="margin-bottom: 30px">
-        <%= link_to "Add", following_movie_path(@movie) %>
+        <%= link_to "Add", add_movie_path(@movie) %>
         <%= image_tag @movie.image %>
         <h3><%= @movie.title %></h3>
         <p><%= @movie.release_year %></p>

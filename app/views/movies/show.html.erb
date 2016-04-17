@@ -1,23 +1,6 @@
-<div class="main movie-show">
-  <div class="container">
-    <div class="movie">
-      
-      <!-- Display the movie's info here -->
-      <div class="info">
-        <%= image_tag @movie.image %>
-        <h3 class="movie-title"><%= @movie.title %></h3>
-        <p class="movie-release-year"><%= @movie.release_year %></p>
-        <p class="movie-plot"><%= @movie.plot %></p>
-      </div>
-    </div>
-
-    <h2>Cast</h2>
-    <% @actors.each do |actor| %>
-    <div class="actor">
-      <%= image_tag actor.image %>
-      <h3 class="actor-name"><%= actor.first_name %> <%= actor.last_name %></h3>
-      <p class="actor-bio"><%= actor.bio %></p>
-    </div>
-		<% end %>
-  </div>
+<div class="col-sm-9 col-md-10 " style="margin-bottom: 50px; padding-left: 20px">
+  <h1 class="page-header">Movie</h1>
+  <%= render 'eachMovie' %>
+  <h1 class="page-header">All Cast</h1>
+  <%= render 'actors/listActor' %>
 </div>

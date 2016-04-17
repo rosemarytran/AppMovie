@@ -1,6 +1,26 @@
 Rails.application.routes.draw do
 
-  resources :movies
+  #get 'profiles/show'
+
+  devise_for :users, controllers: {
+        sessions: 'users/sessions'
+      }
+  resources :users do
+    resources :profiles
+  end
+  #if user_signed_in? 
+  root 'explore#index'
+  #else 
+    #root 'welcome#index'
+  #end 
+  #get 'explore/index'
+  #get 'welcome/index'
+
+  resources :movies do
+    member do
+      get :following, :unfollowing
+    end
+  end
   resources :actors
 
   # The priority is based upon order of creation: first created -> highest priority.

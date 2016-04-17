@@ -1,0 +1,24 @@
+<div class="row">
+  <% @movies.each do |movie| %>
+   <% if current_user.follows?(movie) %>
+    <div class="col-md-2" style="margin-bottom: 30px">
+        <p>Added</p>
+        <!--<#%= link_to "Unfollow", unfollowing_movie_path(movie) %>-->
+        <%= image_tag movie.image %>
+        <h3><%= movie.title %></h3>
+        <p><%= movie.release_year %></p>
+        <%= link_to "Learn more", movie_path(movie) %>
+    </div>
+   <% else %>
+    <div class="col-md-2" style="margin-bottom: 30px">
+        <%= link_to "Add", following_movie_path(movie) %>
+        <%= image_tag movie.image %>
+        <h3><%= movie.title %></h3>
+        <p><%= movie.release_year %></p>
+        <%= link_to "Learn more", movie_path(movie) %>
+    </div>
+   <% end %>
+  <% end %>
+</div>
+   
+  

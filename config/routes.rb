@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
+  # get 'calender/index'
+  # get 'calender/show'
+
   #get 'profiles/show'
 
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
   resources :users do
-    resources :profiles
+    resources :profiles, :calender
   end
   #if user_signed_in? 
   root 'explore#index'

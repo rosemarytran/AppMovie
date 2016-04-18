@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20160418184300_add_followers_count_to_movies.rb

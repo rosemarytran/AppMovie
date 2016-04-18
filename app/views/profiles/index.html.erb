@@ -1,5 +1,5 @@
 <div class="col-sm-9 col-md-10 " style="margin-bottom: 50px; ">
-  <h1 class="page-header">All Movies I follow</h1>
+  <h1 class="page-header">All Movies I follow (<%= current_user.followees_count %>)</h1>
   <div class="row">
       <% @movies_following.each do |movie| %>
       <div class="col-md-2" style="margin-bottom: 30px">

@@ -11,23 +11,26 @@ class MoviesController < ApplicationController
   end
   
   def following
-    current_user.follow!(Movie.find(params[:id]))
-    # if current_page?(controller: 'explore', action: 'index')
+    @movie = Movie.find(params[:id])
+    current_user.follow!(@movie)
+    current_user.followees_count += 1
+    @movie.followers_count += 1
     redirect_to root_path
-    # else
-    #     redirect_to movie_path(Movie.find(params[:id]))
-    # end
   end
   
    def add
     @movie = Movie.find(params[:id])
     current_user.follow!(@movie)
+    current_user.followees_count += 1
+    @movie.followers_count += 1
     redirect_to movie_path(@movie)
    end
   
   def remove
     @movie = Movie.find(params[:id])
     current_user.unfollow!(@movie)
+    current_user.followees_count -=  1
+    @movie.followers_count -= 1
     redirect_to movie_path(@movie)
   end
   

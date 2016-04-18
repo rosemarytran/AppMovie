@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   #get 'profiles/show'
 
   devise_for :users, controllers: {
@@ -17,6 +16,7 @@ Rails.application.routes.draw do
   #get 'welcome/index'
 
   resources :movies do
+    resources :episodes
     member do
       get :following, :add, :remove
     end

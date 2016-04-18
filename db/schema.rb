@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415080257) do
+ActiveRecord::Schema.define(version: 20160418145218) do
 
   create_table "actors", force: :cascade do |t|
     t.string   "first_name"
@@ -20,6 +20,18 @@ ActiveRecord::Schema.define(version: 20160415080257) do
     t.string   "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "episodes", force: :cascade do |t|
+    t.string   "ep_number"
+    t.string   "ep_title"
+    t.string   "ep_plot"
+    t.string   "ep_time"
+    t.string   "ep_date"
+    t.string   "ep_broadcast"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "movie_id"
   end
 
   create_table "follows", force: :cascade do |t|

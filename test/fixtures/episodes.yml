@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ep_number: MyString
+  ep_title: MyString
+  ep_plot: MyString
+  ep_time: MyString
+  ep_date: MyString
+  ep_broadcast: MyString
+
+two:
+  ep_number: MyString
+  ep_title: MyString
+  ep_plot: MyString
+  ep_time: MyString
+  ep_date: MyString
+  ep_broadcast: MyString

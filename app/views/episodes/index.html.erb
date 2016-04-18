@@ -1,0 +1,17 @@
+
+<table>
+  <tbody>
+    <% @episodes.each do |episode| %>
+      <tr>
+        <td><%= episode.ep_number %> | </td> 
+        <td><%= episode.ep_title %> | </td> 
+        <td><%= episode.ep_time %> | </td> 
+        <td><%= episode.ep_date %> | </td> 
+        <td><%= episode.ep_broadcast %> | </td> 
+        <td><%= link_to 'Show', movie_episode_path(episode.movie_id, episode) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -10,20 +10,20 @@ class MoviesController < ApplicationController
     @episodes = @movie.episodes
   end
   
-  def following
-    @movie = Movie.find(params[:id])
-    current_user.follow!(@movie)
-    current_user.followees_count += 1
-    @movie.followers_count += 1
-    redirect_to root_path
-  end
+#   def following
+#     @movie = Movie.find(params[:id])
+#     current_user.follow!(@movie)
+#     current_user.followees_count += 1
+#     @movie.followers_count += 1
+#     redirect_to root_path
+#   end
   
    def add
     @movie = Movie.find(params[:id])
     current_user.follow!(@movie)
     current_user.followees_count += 1
     @movie.followers_count += 1
-    redirect_to movie_path(@movie)
+    redirect_to(:back)
    end
   
   def remove

@@ -11,7 +11,7 @@
     </div>
    <% else %>
     <div class="col-md-2" style="margin-bottom: 30px">
-        <%= link_to "Add", following_movie_path(movie) %> | <%= movie.followers_count %> followers
+        <%= link_to "Add",  add_movie_path(movie), :method => :post  %> | <%= movie.followers_count %> followers
         <%= image_tag movie.image %>
         <h3><%= movie.title %></h3>
         <p><%= movie.release_year %></p>

@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   resources :movies do
     resources :episodes
     member do
-      get :following, :add, :remove
+      #get :following, :add, :remove
+      post :add
+      delete :remove
     end
   end
   resources :actors

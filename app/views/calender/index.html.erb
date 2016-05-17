@@ -1,18 +1,33 @@
 <h1>Calender#index</h1>
 <p>Find me in app/views/calender/index.html.erb</p>
 
-<% @all_eps.each do |ep| %>
-    <% if ep.ep_date == @today.strftime("%Y-%m-%d") %>
-    Today is: <%= @today %>
-    <p><%= ep.ep_title %></p>
-    <p>_____________________________________________________</p>
-    <% elsif ep.ep_date == @yesterday.strftime("%Y-%m-%d") %>
-    Yesterday is: <%= @yesterday %>
-    <p><%= ep.ep_title %></p>
-    <p>_____________________________________________________</p>
-     <% elsif  ep.ep_date == @tomorrow.strftime("%Y-%m-%d") %>
-    Tommorrow is: <%= @tomorrow %>
-    <p><%= ep.ep_title  %></p>
-    <p>_____________________________________________________</p>
+
+<table class="table table-striped" >
+   <tr>
+        <th>Days</th>
+        <th>Episode</th>
+        <th>Title</th>
+        <th>Plot</th>
+    </tr>
+    <% @days.each do |day| %>
+    <% @all_eps.each do |ep| %>
+        <% if ep.ep_date == day.strftime("%Y-%m-%d") %>
+        <% if ep.ep_date == @today.strftime("%Y-%m-%d") %>
+        <tr class="success">
+            <td><%= day.strftime("%Y-%m-%d") %></td>
+            <td><%= ep.ep_number  %></td>
+            <td><%= ep.ep_title  %></td>
+            <td><%= ep.ep_plot  %></td>
+        </tr>
+        <% else %>
+        <tr>
+            <td><%= day.strftime("%Y-%m-%d") %></td>
+            <td><%= ep.ep_number  %></td>
+            <td><%= ep.ep_title  %></td>
+            <td><%= ep.ep_plot  %></td>
+        </tr>
+        <% end %>
+        <% end %>
+        <% end %>
     <% end %>
-<% end %>
+</table>

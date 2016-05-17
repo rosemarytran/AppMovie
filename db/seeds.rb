@@ -59,11 +59,11 @@ m8.actors << [a20, a9, a23, a24]
 m9.actors << [a5, a9, a29, a30]
 m10.actors << [a31, a27, a28, a2]
 
-s1_1 = Episode.create(ep_number: "S01E01", ep_title: "Thao1", ep_plot: "Hello Thao1", ep_time: "09:00" ,ep_date: "2016-04-17", ep_broadcast: "ABC")
-s1_2= Episode.create(ep_number: "S01E02", ep_title: "Thao2", ep_plot: "Hello Thao2", ep_time: "09:00" ,ep_date: "2016-04-18", ep_broadcast: "ABC")
+s1_1 = Episode.create(ep_number: "S01E01", ep_title: "My first test ep 1", ep_plot: "Hahahahahahahahahahahahahahah. should be yesterday ", ep_time: "09:00" ,ep_date: "2016-05-16", ep_broadcast: "ABC")
+s1_2= Episode.create(ep_number: "S01E02", ep_title: "My first test ep 2", ep_plot: "Hellooooooooooooooooooooooiiiii should be today", ep_time: "09:00" ,ep_date: "2016-05-17", ep_broadcast: "ABC")
 
-s2_1 = Episode.create(ep_number: "S01E01", ep_title: "Rose1", ep_plot: "Hello Rose1", ep_time: "10:00" ,ep_date: "2016-04-16", ep_broadcast: "NBC")
-s2_2= Episode.create(ep_number: "S01E02", ep_title: "Rose2", ep_plot: "Hello Rose2", ep_time: "10:00" ,ep_date: "2016-04-19", ep_broadcast: "NBC")
+s2_1 = Episode.create(ep_number: "S01E01", ep_title: "My second test ep 1", ep_plot: "Hihihihihihihihiihihihihi should be tommorrow", ep_time: "10:00" ,ep_date: "2016-05-18", ep_broadcast: "NBC")
+s2_2= Episode.create(ep_number: "S01E02", ep_title: "My second test ep 1", ep_plot: "Hhoooohohohohoho after tommorrow", ep_time: "10:00" ,ep_date: "2016-05-19", ep_broadcast: "NBC")
 
 m1.episodes << [s1_1, s1_2]
 m2.episodes << [s2_1, s2_2]

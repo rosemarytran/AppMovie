@@ -1,6 +1,4 @@
-<div class="col-sm-9 col-md-10 " style="margin-bottom: 50px; padding-left: 20px">
-  <h1 class="page-header">Actor</h1>
-  <%= render 'eachActor' %>
-  <h1 class="page-header">All Movies</h1>
-  <%= render 'movies/listMovie' %>
-</div>
+<h1 class="page-header"><%= @actor.first_name %> <%= @actor.last_name %></h1>
+<%= render 'eachActor' %>
+<h1 class="page-header">All Movies</h1>
+<%= render 'movies/listMovie' %>

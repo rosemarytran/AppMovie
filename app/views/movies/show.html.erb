@@ -1,8 +1,8 @@
 <div class="col-sm-9 col-md-10 " style="margin-bottom: 50px; padding-left: 20px">
-  <h1 class="page-header">Movie</h1>
+  <h1 class="page-header"><%= @movie.title %> (<%= @movie.release_year %>)</h1>
   <%= render 'eachMovie' %>
-  <h1 class="page-header">All Episodes</h1>
+  <h1 class="page-header">Episodes</h1>
   <%= render template: 'episodes/index' %>
-  <h1 class="page-header">All Cast</h1>
+  <h1 class="page-header">Cast</h1>
   <%= render 'actors/listActor' %>
 </div>

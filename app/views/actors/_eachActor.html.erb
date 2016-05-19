@@ -1,8 +1,11 @@
 <!-- Display an actor's info here -->
-<div class="row">
-  <div class="col-md-2" style="margin-bottom: 30px">
-      <%= image_tag @actor.image  %>
-      <h3><%= @actor.first_name %> <%= @actor.last_name %> </h3>
-      <p> <%= @actor.bio %> </p>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="<%= @actor.image %>" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <h3 class="media-heading"><%= @actor.bio %></h3>
   </div>
 </div>

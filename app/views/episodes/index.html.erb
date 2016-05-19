@@ -1,17 +1,42 @@
+<div>
 
-<table>
-  <tbody>
-    <% @episodes.each do |episode| %>
-      <tr>
-        <td><%= episode.ep_number %> | </td> 
-        <td><%= episode.ep_title %> | </td> 
-        <td><%= episode.ep_time %> | </td> 
-        <td><%= episode.ep_date %> | </td> 
-        <td><%= episode.ep_broadcast %> | </td> 
-        <td><%= link_to 'Show', movie_episode_path(episode.movie_id, episode) %></td>
-      </tr>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#season1" aria-controls="season1" role="tab" data-toggle="tab">Season 1</a></li>
+    <% for i in 2..@nb_of_season %>
+      <li role="presentation"><a href="#season<%= i %>" aria-controls="season<%= i %>" role="tab" data-toggle="tab">Season <%= i %></a></li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
 
-<br>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    
+    <div role="tabpanel" class="tab-pane fade in active" id="season1">
+      <table class="table table-striped" >
+        <% @episodes_hash[1].each do |ep| %>
+        <tr>
+          <td><%= ep.ep_number  %></td>
+          <td><%= ep.ep_title  %></td>
+          <td><%= ep.ep_date %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+    
+    <% for i in 2..@nb_of_season %>
+       <div role="tabpanel" class="tab-pane fade" id="season<%= i %>">
+         <table class="table table-striped" >
+            <% @episodes_hash[i].each do |ep| %>
+            <tr>
+              <td><%= ep.ep_number  %></td>
+              <td><%= ep.ep_title  %></td>
+              <td><%= ep.ep_date %></td>
+            </tr>
+            <% end %>
+          </table>
+       </div>
+    <% end %>
+    
+  </div>
+
+</div>

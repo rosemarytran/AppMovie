@@ -1,19 +1,25 @@
-<div class="row">
-  <% if current_user.follows?(@movie) %>
-    <div class="col-md-2" style="margin-bottom: 30px">
-        <%= link_to "Remove", remove_movie_path(@movie), :method => :delete %> | <%= @movie.followers_count %> followers
-        <%= image_tag @movie.image %>
-        <h3><%= @movie.title %></h3>
-        <p><%= @movie.release_year %></p>
-        <p><%= @movie.plot %></p>
-    </div>
-  <% else %>
-    <div class="col-md-2" style="margin-bottom: 30px">
-        <%= link_to "Add", add_movie_path(@movie), :method => :post %> | <%= @movie.followers_count %> followers
-        <%= image_tag @movie.image %>
-        <h3><%= @movie.title %></h3>
-        <p><%= @movie.release_year %></p>
-        <p><%= @movie.plot %></p>
-    </div>
-  <% end %>
+<% if current_user.follows?(@movie) %>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="<%= @movie.image %>" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <p><%= link_to "Remove",  remove_movie_path(@movie), :method => :delete , class: "btn btn-danger", role: "button"%> | <%= @movie.followers_count %> followers </p>
+    <h3 class="media-heading"><%= @movie.plot %></h3>
+  </div>
 </div>
+<% else %>
+<div class="media">
+  <div class="media-left">
+    <a href="#">
+      <img class="media-object" src="<%= @movie.image %>" alt="...">
+    </a>
+  </div>
+  <div class="media-body">
+    <p><%= link_to "Add",  add_movie_path(@movie), :method => :post , class: "btn btn-primary", role: "button"%> | <%= @movie.followers_count %> followers </p>
+    <h3 class="media-heading"><%= @movie.plot %></h3>
+  </div>
+</div>
+<% end %>

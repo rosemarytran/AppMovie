@@ -1,6 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :authenticate_user!
   def index
-    @user = User.find(params[:user_id])
-    @movies_following = @user.followees(Movie)
+    @movies = current_user.followees(Movie)
   end
 end

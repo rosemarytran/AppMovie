@@ -34,33 +34,29 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">All <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="/movies">Series</a></li>
-                  <li><a href="/actors">Actors</a></li>
                   <li role="separator" class="divider"></li>
-                  <li class="dropdown-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
+                  <li><a href="/actors">Actors</a></li>
                 </ul>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
-              <!--<li><p>Sign in as <%#= current_user.email%></p></li>-->
-              <!--<li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>-->
+              <li><a><span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= current_user.email%></a></li>
+              <li class="active"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </nav>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
-      </div>
-    </div>
-
     <div class="container">
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <div class="container">
+          <h1>Hello, world!</h1>
+          <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+          <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+      </div>
+      
       <%= yield %>
       <hr>
       <footer>

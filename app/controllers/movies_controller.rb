@@ -1,6 +1,20 @@
 class MoviesController < ApplicationController
    def index
-    @movies = Movie.all
+    #@movies = Movie.all
+    @filterrific = initialize_filterrific(
+        Movie,
+        params[:filterrific],
+        select_options: {
+            sorted_by: Movie.options_for_sorted_by
+        },
+        available_filters: [:search_query, :sorted_by],
+    ) or return
+    @movies = @filterrific.find.paginate(per_page: 12, page: params[:page])
+    
+    respond_to do |format|
+        format.html
+        format.js
+    end
    end
  
 

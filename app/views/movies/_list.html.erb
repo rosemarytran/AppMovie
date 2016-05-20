@@ -1,3 +1,8 @@
+<div id="filterrific_results">
+<div class="form-group btn btn-info btn-lg btn-block">
+    <%= page_entries_info @movies %>
+</div>
+<br>
 <div class="row">
     <% @movies.each do |movie| %>
     <% if current_user.follows?(movie) %>
@@ -27,3 +32,7 @@
    <% end %>
    <% end %>
 </div>
+
+</div>
+
+<%= will_paginate @movies %>

@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+gem 'filterrific'
+gem 'will_paginate', '~> 3.0.5'
 gem "socialization"
 gem 'devise', '~> 3.5.6'
 gem 'bootstrap-sass', '~> 3.3.6'

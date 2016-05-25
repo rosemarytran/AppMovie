@@ -18,7 +18,5 @@ class CalenderController < ApplicationController
       end
     end
   end
-
-  def show
-  end
+  
 end

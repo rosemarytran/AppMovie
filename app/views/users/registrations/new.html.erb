@@ -1,7 +1,5 @@
-<h2>Sign up hihi</h2>
-
-<!--login modal-->
-<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true" style="background-color: red">
+<!--sign up modal-->
+<div id="loginModal" class="modal show backgroundimg" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
@@ -9,18 +7,15 @@
           <h1 class="text-center">Sign up</h1>
       </div>
       <div class="modal-body">
-         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= devise_error_messages! %>
+         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> <%= devise_error_messages! %>
             <div class="form-group">
               <%= f.email_field :email, autofocus: true, class: "form-control input-lg", placeholder: "Email" %>
             </div>
             <div class="form-group">
-              <% if @minimum_password_length %>
-              <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: "Password <%= @minimum_password_length %> characters minimum" %>
-              <% end %>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: "Password: 8 characters minimum" %>
             </div>
             <div class="form-group">
-              <%= f.password_field :password, autocomplete: "off", class: "form-control input-lg", placeholder: "Password confirmation" %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control input-lg", placeholder: "Password confirmation" %>
             </div>
             <div class="form-group">
               <%= f.submit "Sign up", class: "btn btn-primary btn-lg btn-block" %>
@@ -29,7 +24,7 @@
       </div>
       <div class="modal-footer">
           <div class="col-md-12">
-              <%= render "users/shared/links" %>
+              Already have an acount! <%= render "users/shared/links" %>
     		  </div>	
       </div>
   </div>

@@ -1,5 +1,5 @@
 <!--login modal-->
-<div id="loginModal" class="modal show" tabindex="-1" role="dialog" aria-hidden="true">
+<div id="loginModal" class="modal show backgroundimg" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
@@ -23,6 +23,7 @@
             <div class="form-group">
               <%= f.submit "Sign in", class: "btn btn-primary btn-lg btn-block" %>
             </div>
+            <h3 class="alert" style="color: #d9534f; text-align: center"><%= alert %></h3>
           <% end %>
       </div>
       <div class="modal-footer">

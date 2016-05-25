@@ -7,6 +7,7 @@ class MoviesController < ApplicationController
         select_options: {
             sorted_by: Movie.options_for_sorted_by
         },
+        default_filter_params: {sorted_by: 'release_year desc'},
         available_filters: [:search_query, :sorted_by],
     ) or return
     @movies = @filterrific.find.paginate(per_page: 12, page: params[:page])
